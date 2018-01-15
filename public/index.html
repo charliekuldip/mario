@@ -4,17 +4,24 @@
         <title>Billy's Super Mario</title>
         <script type="module" src="js/main.js"></script>
         <style>
+            * {
+                box-sizing: border-box;
+            }
             body {
                 text-align: center;
+                margin: 0;
+                padding: 0;
             }
             h1 {
                 font-family: sans-serif;
                 font-weight: 600;
                 text-transform: uppercase;
+                margin: 0;
             }
             canvas {
                 display:block;
                 outline: 1px solid grey;
+                image-rendering: pixelated;
             }
         </style>
     </head>
