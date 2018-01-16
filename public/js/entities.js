@@ -3,7 +3,6 @@ import Velocity from './traits/Velocity.js';
 import Jump from './traits/Jump.js';
 import {loadMarioSprite} from './sprites.js';
 
-
 export function createMario() {
     return loadMarioSprite() 
     .then(sprite => {
