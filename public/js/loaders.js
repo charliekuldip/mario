@@ -12,6 +12,11 @@ export function loadImage(url) {
     });
 }
 
+function loadJSON(url) {
+    return fetch(url)
+    .then(r => r.json());
+}
+
 function createTiles(level, backgrounds) {
     function applyRange(background, xStart, xLen, yStart, yLen) {
         const xEnd = xStart + xLen;
@@ -30,6 +35,9 @@ function createTiles(level, backgrounds) {
             if (range.length === 4) {
                 const [xStart, xLen, yStart, yLen] = range;
                 applyRange(background, xStart, xLen, yStart, yLen);
+            } else if (range.length === 3) {
+                const [xStart, xLen, yStart] = range;
+                applyRange(background, xStart, xLen, yStart, 1);
             } else if (range.length === 2) {
                 const [xStart, yStart] = range;
                 applyRange(background, xStart, 1, yStart, 1);
@@ -41,8 +49,7 @@ function createTiles(level, backgrounds) {
 
 export function loadLevel(name) {
     return Promise.all([
-        fetch(`/levels/${name}.json`)
-        .then(r => r.json()),
+        loadJSON(`/levels/${name}.json`),
         loadBackgroundSprites(),
     ])
     .then(([levelSpec, backgroundSprites]) => {
