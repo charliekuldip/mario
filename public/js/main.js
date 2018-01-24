@@ -5,6 +5,7 @@ import {createMario} from './entities.js';
 import {createCollisionLayer} from './layers.js';
 import {setupKeyboard} from './input.js';
 import {setUpMouseControl} from './debug.js';
+import JoyStick from './JoyStick.js';
 
 const canvas = document.getElementById('screen');
 const context = canvas.getContext('2d');
@@ -27,6 +28,9 @@ Promise.all([
     input.listenTo(window);
 
     setUpMouseControl(canvas, mario, camera);
+
+    const joyStick = new JoyStick();
+    joyStick.bindEvents(mario);
 
     const timer = new Timer(1/60);
     timer.update = function(deltaTime) {

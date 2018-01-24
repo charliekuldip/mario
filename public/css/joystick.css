@@ -1,0 +1,53 @@
+.frame {
+    position: absolute;
+    top: 300px;
+    left: 0;
+    width: 400px;
+    height: 100px;
+    background-color: #000000;
+    perspective: 100;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+  }
+  
+   .blobs {
+       width: 100%;
+       display: flex;
+    justify-content: center;
+    align-items: space-around;
+    flex-wrap: wrap;
+   }
+  .blob {
+    width: 36px;
+    height: 36px;
+    margin: 4px;
+    text-align: center;
+    border-radius: 6px;
+    background-color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .blob.pressed {
+    background-color: white;
+  }
+ 
+  .blob--0.pressed {
+    background-color: green;
+  }
+  
+  .blob--1.pressed {
+    background-color: red;
+  }
+  
+  .blob--2.pressed {
+    background-color: blue;
+  }
+  
+  .blob--3.pressed {
+    background-color: yellow;
+  }
