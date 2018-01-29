@@ -21,7 +21,7 @@ Promise.all([
     mario.pos.set(64, 64);
     // LEVEL DEBUGGER
     level.comp.layers.push(
-        createCollisionLayer(level),
+        // createCollisionLayer(level),
         createCameraLayer(camera)
     );
 
